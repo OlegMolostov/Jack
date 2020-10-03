@@ -17,11 +17,11 @@ public class Test {
 
                         case 0:
                             System.out.println("Ответ:");
-                            System.out.println(Operation(list));// функция операций с арабскими числами
+                            System.out.println(Operation(list)+"\n");// функция операций с арабскими числами
                             break;
                         case 1:
                             System.out.println("Ответ:");
-                            System.out.println(Operation1(list));// функция операций с римскими числами(внутри него
+                            System.out.println(Operation1(list)+"\n");// функция операций с римскими числами(внутри него
                             break;                                //сначала перевожу в арабские и вызываю предыдущий метод
 
                         case 2:
@@ -104,6 +104,9 @@ public class Test {
         int res;
         String[] list = {Roman.valueOf(s[0]).getArab() + "", s[1], Roman.valueOf(s[2]).getArab() + ""};
         res = Operation(list);
+        if (res==0){
+            return 0+k;
+        }
         k = Roman.convert(res);
         return k;
     }
