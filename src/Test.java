@@ -1,6 +1,8 @@
 
 import java.util.Scanner;
 
+import static java.lang.Math.abs;
+
 public class Test {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -17,11 +19,11 @@ public class Test {
 
                         case 0:
                             System.out.println("Ответ:");
-                            System.out.println(Operation(list)+"\n");// функция операций с арабскими числами
+                            System.out.println(Operation(list) + "\n");// функция операций с арабскими числами
                             break;
                         case 1:
                             System.out.println("Ответ:");
-                            System.out.println(Operation1(list)+"\n");// функция операций с римскими числами(внутри него
+                            System.out.println(Operation1(list) + "\n");// функция операций с римскими числами(внутри него
                             break;                                //сначала перевожу в арабские и вызываю предыдущий метод
 
                         case 2:
@@ -89,16 +91,16 @@ public class Test {
         i1 = Integer.parseInt(s[0]);
         i2 = Integer.parseInt(s[2]);
 
-        if (s[1].equals("+")) {
-            return i1 + i2;
-        } else if (s[1].equals("-") ) {
-            if(i1>=i2){
-            return i1 - i2;
-            }
-            else return 0; //Калькулятор умеет работать только с целыми числами.
-        } else if (s[1].equals("*")) return i1 * i2;
-
-        else return i1 / i2;
+        switch (s[1]) {
+            case "+":
+                return i1 + i2;
+            case "-":
+                return i1 - i2;
+            case "*":
+                return i1 * i2;
+            default:
+                return i1 / i2;
+        }
 
     }
 
@@ -107,10 +109,14 @@ public class Test {
         int res;
         String[] list = {Roman.valueOf(s[0]).getArab() + "", s[1], Roman.valueOf(s[2]).getArab() + ""};
         res = Operation(list);
-        if (res==0){
-            return 0+k;
+        if (res == 0) {
+            return 0 + k;
+        } else if (res < 0) {
+            res = abs(res);
+            k = "-";
         }
-        k = Roman.convert(res);
+
+        k = k + Roman.convert(res);
         return k;
     }
 
