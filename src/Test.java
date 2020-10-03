@@ -45,7 +45,7 @@ public class Test {
 
     }
 
-    public static boolean contains(String s) {
+    private static boolean contains(String s) {
         boolean b = false;
         String[] operations = {"+", "-", "*", "/"};
         for (String l : operations
@@ -60,7 +60,7 @@ public class Test {
         return b;
     }
 
-    public static int ArAndRom(String s1, String s2) {
+    private static int ArAndRom(String s1, String s2) {
         int i1, i2;
         try {
             i1 = Integer.parseInt(s1);
@@ -91,8 +91,11 @@ public class Test {
 
         if (s[1].equals("+")) {
             return i1 + i2;
-        } else if (s[1].equals("-")) {
+        } else if (s[1].equals("-") ) {
+            if(i1>=i2){
             return i1 - i2;
+            }
+            else return 0; //Калькулятор умеет работать только с целыми числами.
         } else if (s[1].equals("*")) return i1 * i2;
 
         else return i1 / i2;
