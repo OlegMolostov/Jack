@@ -15,7 +15,7 @@ public class Test {
                 System.out.println("Ведите выражение");
                 string = scanner.nextLine();
                 String[] listNumber = string.split("[\\s+*/-]+");//массив чисел
-                String[] listOperation=string.split("[\\sa-zA-Z0-9]+");// масив оператора
+                String[] listOperation=string.split("[\\sa-zA-Z0-9]+");// массив оператора
                 String[] list=new String[3];//общий
                 try {
                     list[0]=listNumber[0];
