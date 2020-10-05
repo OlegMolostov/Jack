@@ -6,7 +6,6 @@ import static methods.Methods.*;
 public class Test {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        scanner.useDelimiter("[+*/-]");
         String string;
 
 
