@@ -25,7 +25,7 @@ public class Test {
                     throw new Exception("Неверно введены данные!");
                 }
 
-                if (contains(list[1])) { // проверка что 2 числа и знак, который нам нужен
+                if (contains(list[1])) { // проверка что знак, который нам нужен
                     switch (ArAndRom(list[0], list[2])) {//  проверка на сложение разных типов, а так же размер чисел
 
                         case 0:
